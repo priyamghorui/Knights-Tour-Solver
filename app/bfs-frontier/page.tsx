@@ -66,7 +66,10 @@ export default function KnightBFS() {
   }
 
   function startBFS() {
-    if (!startPos) return;
+    if (!startPos) {
+      alert("Select a starting square first!");
+      return;
+    }
 
     reset();
 
@@ -140,10 +143,20 @@ export default function KnightBFS() {
               </div>
 
               <div className="flex gap-2">
-                <Button size="sm" className="cursor-pointer" onClick={startBFS} disabled={running}>
+                <Button
+                  size="sm"
+                  className="cursor-pointer"
+                  onClick={startBFS}
+                  disabled={running}
+                >
                   <Play className="w-4 h-4 mr-1" /> Start BFS
                 </Button>
-                <Button className="cursor-pointer" size="sm" variant="destructive" onClick={reset}>
+                <Button
+                  className="cursor-pointer"
+                  size="sm"
+                  variant="destructive"
+                  onClick={reset}
+                >
                   <RotateCcw className="w-4 h-4 mr-1" /> Reset
                 </Button>
               </div>
