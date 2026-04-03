@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, RotateCcw, Zap, Info, MessageSquare } from "lucide-react";
+import { Play, Pause, RotateCcw, Zap, Info, MessageSquare, Code2, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navber from "@/components/myComponents/universalComponents/Navber";
@@ -159,6 +159,21 @@ export default function KnightTourWarnsdorff() {
               <p className="ml-5">go to that move</p>
             </div>
 
+           <div className="pt-2">
+  <a
+    href="https://colab.research.google.com/drive/1WEO0vN26VLEvEKwF19_ki0pn_HjU2g7j?usp=sharing" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold hover:underline group"
+  >
+    <Code2 className="w-4 h-4" /> 
+    <span>View Python Implementation on Google Colab</span>
+    <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+  </a>
+  <p className="text-xs text-slate-500 dark:text-slate-500 mt-1 ml-6">
+    (Includes Warnsdorff's Rule)
+  </p>
+</div>
             <div className="pt-2">
               <a
                 href="/#feedback"

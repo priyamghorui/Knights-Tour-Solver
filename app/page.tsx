@@ -80,6 +80,7 @@ export default function KnightsTourLanding() {
 
       if (response.ok) {
         // SUCCESS: Reload the page to clear state and show a fresh board
+            alert("Feedback successfully submitted.");
         window.location.reload();
       } else {
         alert("Submission failed. Please try again.");
