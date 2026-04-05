@@ -15,6 +15,8 @@ import {
   Moon,
   GraduationCap,
   Loader2,
+  Star,
+  FolderGit,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Navber from "@/components/myComponents/universalComponents/Navber";
@@ -80,7 +82,7 @@ export default function KnightsTourLanding() {
 
       if (response.ok) {
         // SUCCESS: Reload the page to clear state and show a fresh board
-            alert("Feedback successfully submitted.");
+        alert("Feedback successfully submitted.");
         window.location.reload();
       } else {
         alert("Submission failed. Please try again.");
@@ -156,17 +158,17 @@ export default function KnightsTourLanding() {
           ))}
         </div>
         {/* Mentor Section */}
-        <Link
-          href="https://drtamal.github.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <section className="mb-20">
-            <div className="flex items-center gap-3 mb-10">
-              <GraduationCap className="w-6 h-6 text-indigo-600 dark:text-indigo-500" />
-              <h2 className="text-2xl font-bold">Project Mentor</h2>
-            </div>
-            <div className="max-w-md">
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-10">
+            <GraduationCap className="w-6 h-6 text-indigo-600 dark:text-indigo-500" />
+            <h2 className="text-2xl font-bold">Project Mentor</h2>
+          </div>
+          <div className="max-w-md">
+            <Link
+              href="https://drtamal.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="group p-6 rounded-2xl border-2 border-indigo-500/20 bg-white dark:bg-slate-900/40 hover:border-indigo-500/50 transition-all shadow-sm">
                 <p className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   {mentor.name}
@@ -178,9 +180,9 @@ export default function KnightsTourLanding() {
                   </p>
                 </div>
               </div>
-            </div>
-          </section>
-        </Link>
+            </Link>
+          </div>
+        </section>
         {/* Contributors Section */}
         <section className="mb-32">
           <div className="flex items-center gap-3 mb-10">
@@ -220,7 +222,45 @@ export default function KnightsTourLanding() {
             ))}
           </div>
         </section>
+        {/* Project Repository Section */}
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-10">
+            <FolderGit className="w-6 h-6 text-indigo-600 dark:text-indigo-500" />
+            <h2 className="text-2xl font-bold">Project Repository</h2>
+          </div>
+          <div className="max-w-md">
+            <Link
+              href="https://github.com/priyamghorui/Knights-Tour-Solver.git"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="group p-6 rounded-2xl border-2 border-indigo-500/20 bg-white dark:bg-slate-900/40 hover:border-indigo-500/50 transition-all shadow-sm">
+                <div className="flex justify-between items-start">
+                  <p className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    view-source-code
+                  </p>
+                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 transition-colors" />
+                </div>
 
+                <div className="mt-4 flex items-center gap-4">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                    <p className="text-sm font-medium text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                      <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />{" "}
+                      Open Source
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
+                    <p className="text-sm font-medium text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                      <GitBranch className="w-3.5 h-3.5" /> Main Branch
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
         {/* Feedback */}
         <section
           id="feedback"
